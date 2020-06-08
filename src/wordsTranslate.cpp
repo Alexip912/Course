@@ -20,17 +20,17 @@ void translate(std::vector<std::pair<std::string, std::string>>& wordsFromFile)
     for (int i = 0; i < testSize; i++) {
         std::string answer;
 
-        std::cout << "  Ïåðåâåäèòå äàííîå ñëîâî íà àíãëèéñêèé ÿçûê:\n  "
+        std::cout << "  ÐŸÐµÑ€ÐµÐ²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ð¾Ðµ ÑÐ»Ð¾Ð²Ð¾ Ð½Ð° Ð°Ð½Ð³Ð»Ð¸Ð¹ÑÐºÐ¸Ð¹ ÑÐ·Ñ‹Ðº:\n  "
                   << wordsFromFile[i].second << "\n";
 
-        std::cout << "  Ââåäèòå ïåðåâîä: ";
+        std::cout << "  Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´: ";
         std::cin >> answer;
 
         isCorrect = answerCheck(answer, wordsFromFile, i);
         if (isCorrect) {
-            std::cout << "\n  Âñå âåðíî!\n\n";
+            std::cout << "\n  Ð’ÑÐµ Ð²ÐµÑ€Ð½Ð¾!\n\n";
         } else {
-            std::cout << "\n  Íåò, ýòî ñëîâî ïåðåâîäèòñÿ òàê:\n  "
+            std::cout << "\n  ÐÐµÑ‚, ÑÑ‚Ð¾ ÑÐ»Ð¾Ð²Ð¾ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð¸Ñ‚ÑÑ Ñ‚Ð°Ðº:\n  "
                       << wordsFromFile[i].first << "\n\n";
         }
     }
@@ -77,111 +77,111 @@ void secondMenu()
     int choose;
 
     std::cout << "===================================================\n";
-    std::cout << "|          Âûáåðèòå òåìó äëÿ ïðîâåðêè             |\n";
-    std::cout << "|            èç íèæå ïðåäñòàâëåííûõ               |\n";
+    std::cout << "|          Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ‚ÐµÐ¼Ñƒ Ð´Ð»Ñ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸             |\n";
+    std::cout << "|            Ð¸Ð· Ð½Ð¸Ð¶Ðµ Ð¿Ñ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð½Ñ‹Ñ…               |\n";
     std::cout << "===================================================\n";
-    std::cout << "| 1. Àýðîïîðò                                     |\n";
-    std::cout << "| 2. Ìàøèíû                                       |\n";
-    std::cout << "| 3. Êèíî                                         |\n";
-    std::cout << "| 4. Ãîðîä                                        |\n";
-    std::cout << "| 5. Áîëåçíè                                      |\n";
-    std::cout << "| 6. Îáðàçîâàíèå                                  |\n";
-    std::cout << "| 7. Ìóçûêà                                       |\n";
-    std::cout << "| 8. Ïîëèòèêà                                     |\n";
-    std::cout << "| 9. Îáùåñòâî                                     |\n";
-    std::cout << "| 10. Õèìèÿ è ôèçèêà                              |\n";
-    std::cout << "| 11. Âåðíóòüñÿ íàçàä                             |\n";
+    std::cout << "| 1. ÐÑÑ€Ð¾Ð¿Ð¾Ñ€Ñ‚                                     |\n";
+    std::cout << "| 2. ÐœÐ°ÑˆÐ¸Ð½Ñ‹                                       |\n";
+    std::cout << "| 3. ÐšÐ¸Ð½Ð¾                                         |\n";
+    std::cout << "| 4. Ð“Ð¾Ñ€Ð¾Ð´                                        |\n";
+    std::cout << "| 5. Ð‘Ð¾Ð»ÐµÐ·Ð½Ð¸                                      |\n";
+    std::cout << "| 6. ÐžÐ±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ                                  |\n";
+    std::cout << "| 7. ÐœÑƒÐ·Ñ‹ÐºÐ°                                       |\n";
+    std::cout << "| 8. ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ°                                     |\n";
+    std::cout << "| 9. ÐžÐ±Ñ‰ÐµÑÑ‚Ð²Ð¾                                     |\n";
+    std::cout << "| 10. Ð¥Ð¸Ð¼Ð¸Ñ Ð¸ Ñ„Ð¸Ð·Ð¸ÐºÐ°                              |\n";
+    std::cout << "| 11. Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ Ð½Ð°Ð·Ð°Ð´                             |\n";
     std::cout << "===================================================\n";
-    std::cout << "  Âûáåðèòå ïóíêò ìåíþ: ";
+    std::cout << "  Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð¼ÐµÐ½ÑŽ: ";
     std::cin >> choose;
 
     switch (choose) {
     case 1:
         if (!checkPath(AIRPORT)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Àýðîïîðò\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"ÐÑÑ€Ð¾Ð¿Ð¾Ñ€Ñ‚\"!\n\n";
             fileParse(AIRPORT, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 2:
         if (!checkPath(CAR)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Ìàøèíû\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"ÐœÐ°ÑˆÐ¸Ð½Ñ‹\"!\n\n";
             fileParse(CAR, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 3:
         if (!checkPath(CINEMA)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Êèíî\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"ÐšÐ¸Ð½Ð¾\"!\n\n";
             fileParse(CINEMA, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 4:
         if (!checkPath(CITY)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Ãîðîä\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"Ð“Ð¾Ñ€Ð¾Ð´\"!\n\n";
             fileParse(CITY, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 5:
         if (!checkPath(DISEASES)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Áîëåçíè\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"Ð‘Ð¾Ð»ÐµÐ·Ð½Ð¸\"!\n\n";
             fileParse(DISEASES, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 6:
         if (!checkPath(EDUCATION)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Îáðàçîâàíèå\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"ÐžÐ±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ\"!\n\n";
             fileParse(EDUCATION, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 7:
         if (!checkPath(MUSIC)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Ìóçûêà\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"ÐœÑƒÐ·Ñ‹ÐºÐ°\"!\n\n";
             fileParse(MUSIC, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 8:
         if (!checkPath(POLITICS)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Ïîëèòèêà\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ°\"!\n\n";
             fileParse(POLITICS, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 9:
         if (!checkPath(SOCIETY)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Îáùåñòâî\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"ÐžÐ±Ñ‰ÐµÑÑ‚Ð²Ð¾\"!\n\n";
             fileParse(SOCIETY, wordsFromFile);
             translate(wordsFromFile);
         }
         break;
     case 10:
         if (!checkPath(CHEMISTRY_PHYSICS)) {
-            std::cout << "  Îòñóòñòâóåò ôàéë ñî ñëîâàìè!\n";
+            std::cout << "  ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ñ„Ð°Ð¹Ð» ÑÐ¾ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸!\n";
         } else {
-            std::cout << "\n  Âû âûáðàëè òåìó \"Õèìèÿ è ôèçèêà\"!\n\n";
+            std::cout << "\n  Ð’Ñ‹ Ð²Ñ‹Ð±Ñ€Ð°Ð»Ð¸ Ñ‚ÐµÐ¼Ñƒ \"Ð¥Ð¸Ð¼Ð¸Ñ Ð¸ Ñ„Ð¸Ð·Ð¸ÐºÐ°\"!\n\n";
             fileParse(CHEMISTRY_PHYSICS, wordsFromFile);
             translate(wordsFromFile);
         }
@@ -190,9 +190,9 @@ void secondMenu()
         menu();
         break;
     default:
-        std::cout << "\n  Îøèáêà ââîäà!\n\n";
+        std::cout << "\n  ÐžÑˆÐ¸Ð±ÐºÐ° Ð²Ð²Ð¾Ð´Ð°!\n\n";
         break;
     }
 
-    std::cout << "  Âû ïåðåâåëè âñå ñëîâà ïî äàííîé òåìå!\n\n";
+    std::cout << "  Ð’Ñ‹ Ð¿ÐµÑ€ÐµÐ²ÐµÐ»Ð¸ Ð²ÑÐµ ÑÐ»Ð¾Ð²Ð° Ð¿Ð¾ Ð´Ð°Ð½Ð½Ð¾Ð¹ Ñ‚ÐµÐ¼Ðµ!\n\n";
 }
