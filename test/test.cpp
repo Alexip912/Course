@@ -6,6 +6,10 @@
 #include <utility>
 #include <vector>
 
+#define RIGHT_PATH "Topics/Test.txt"
+#define WRONG_PATH "Topics/test.jpg"
+#define TEST_PATH "Topics/test.txt"
+
 void fillVector(
         std::vector<std::pair<std::string, std::string>>& vector,
         std::string text)
@@ -77,4 +81,27 @@ TEST(answerCheckTest, incorrect)
     fillVector(vector, "Chemistry");
     EXPECT_FALSE(answerCheck(answer, vector, index));
     vector.clear();
+}
+
+TEST(checkPathTest, correct)
+{
+    EXPECT_TRUE(checkPath(RIGHT_PATH));
+}
+
+TEST(checkPathTest, incorrect)
+{
+    EXPECT_FALSE(checkPath(WRONG_PATH));
+}
+
+TEST(fileParseTest, correct)
+{
+    std::vector<std::pair<std::string, std::string>> vector;
+    fileParse(TEST_PATH, vector);
+
+    ASSERT_STREQ(vector[0].first.c_str(), "Airoport");
+    ASSERT_STREQ(vector[0].second.c_str(), "аэропорт");
+    ASSERT_STREQ(vector[1].first.c_str(), "Airplane");
+    ASSERT_STREQ(vector[1].second.c_str(), "самолет");
+    ASSERT_STREQ(vector[2].first.c_str(), "Aisle");
+    ASSERT_STREQ(vector[2].second.c_str(), "проход");
 }
