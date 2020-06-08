@@ -1,54 +1,125 @@
+#include <fstream>
 #include <iostream>
+#include <utility>
+#include <vector>
+#include <string>
 using namespace std;
+
+#pragma warning(disable : 4996)
+#define PATH "D:\\code\\TRPO\\Course\\Topics\\Airport.txt"
+
+void menu()
+{
+    int choose;
+    bool menuState = true;
+
+    cout << "===================================================\n";
+    cout << "| Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñƒ                    |\n";
+    cout << "| Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸ Ð·Ð½Ð°Ð½Ð¸Ñ ÑÐ»Ð¾Ð² Ð°Ð½Ð³Ð»Ð¸Ð¹ÑÐºÐ¾Ð³Ð¾ ÑÐ·Ñ‹ÐºÐ°          |\n";
+
+    while (menuState) {
+        cout << "===================================================\n";
+        cout << "| 1. ÐŸÑ€Ð°Ð²Ð¸Ð»Ð°                                      |\n"
+             << "| 2. Ð’Ñ‹Ð±Ð¾Ñ€ Ñ‚ÐµÐ¼Ñ‹                                   |\n"
+             << "| 3. ÐÐ²Ñ‚Ð¾Ñ€Ñ‹                                       |\n"
+             << "| 4. Ð’Ñ‹Ñ…Ð¾Ð´                                        |\n";
+        cout << "===================================================\n";
+        cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð¼ÐµÐ½ÑŽ: ";
+        cin >> choose;
+
+        switch (choose) {
+        case 1:
+            cout << "\n  Ð§Ñ‚Ð¾Ð±Ñ‹ Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÑƒ Ð·Ð½Ð°Ð½Ð¸Ð½Ñ Ð°Ð½Ð³Ð»Ð¸Ð¹ÑÐºÐ¸Ñ… ÑÐ»Ð¾Ð²,\n"
+                 << "  Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð¼ÐµÐ½ÑŽ \"Ð’Ñ‹Ð±Ð¾Ñ€ Ñ‚ÐµÐ¼Ñ‹\" \n"
+                 << "  Ð˜ Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ‚ÐµÐ¼Ñƒ, Ð¿Ð¾ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð¹Ñ‚Ð¸ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÑƒ.\n"
+                 << "  ÐŸÐ¾ÑÐ»Ðµ ÑÑ‚Ð¾Ð³Ð¾, Ð½Ð° ÑÐºÑ€Ð°Ð½ Ð²Ñ‹Ð²ÐµÐ´Ð¸Ñ‚ÑÑ ÑÐ»Ð¾Ð²Ð¾, ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ðµ Ð½ÑƒÐ¶Ð½Ð¾ "
+                    "Ð¿ÐµÑ€ÐµÐ²ÐµÑÑ‚Ð¸\n"
+                 << "  Ð•ÑÐ»Ð¸ Ð²Ð°Ñˆ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´ Ð±ÑƒÐ´ÐµÑ‚ Ð²ÐµÑ€Ð½Ñ‹Ð¼ - Ð²Ñ‹Ð²ÐµÐ´ÐµÑ‚ÑÑ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐµ "
+                    "ÑÐ»Ð¾Ð²Ð¾.\n"
+                 << "  Ð•ÑÐ»Ð¸ Ð¶Ðµ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´ Ð±ÑƒÐ´ÐµÑ‚ Ð½ÐµÐ²ÐµÑ€Ð½Ñ‹Ð¼ - Ð²Ñ‹Ð²ÐµÐ´ÐµÑ‚ÑÑ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ "
+                    "Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´.\n\n";
+            break;
+        case 2:
+            break;
+        case 3:
+            cout << "\n  ÐšÑƒÑ€ÑÐ¾Ð²Ð¾Ð¹ Ð¿Ñ€Ð¾ÐµÐºÑ‚ Ð¿Ð¾ Ð´Ð¸ÑÑ†Ð¸Ð¿Ð»Ð¸Ð½Ðµ\n"
+                 << "  \"Ð¢ÐµÑ…Ð½Ð¾Ð»Ð¾Ð³Ð¸Ð¸ Ñ€Ð°Ð·Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ¸ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð½Ð¾Ð³Ð¾ Ð¾Ð±ÐµÑÐ¿ÐµÑ‡ÐµÐ½Ð¸Ñ\".\n"
+                 << "  Ð’Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð¼ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹ Ð˜ÐŸ-912 Ð¨ÐºÑƒÑ€Ð°Ñ‚Ð¾Ð²Ñ‹Ð¼ "
+                    "ÐÐ»ÐµÐºÑÐµÐµÐ¼.\n\n";
+            break;
+        case 4:
+            cout << "\n  Ð’Ñ‹Ñ…Ð¾Ð´\n\n";
+            menuState = false;
+            break;
+        default:
+            cout << "\n  ÐžÑˆÐ¸Ð±ÐºÐ° Ð²Ð²Ð¾Ð´Ð°!\n\n";
+            break;
+        }
+    }
+}
+
+void fileParse(const string path, vector<pair<string, string>>& wordsFromFile)
+{
+    vector<string> wordsFromLine;
+
+	ifstream file(path);
+
+	while (!file.eof()) {
+        pair<string, string> pair;
+        string text;
+        string delim = " ";
+
+        getline(file, text);
+
+		size_t previous = 0;
+        size_t next;
+        size_t delta = delim.length();
+
+		while ((next = text.find(delim, previous)) != string::npos) {
+            string buffer = text.substr(previous, next - previous);
+			pair.first = buffer;
+			previous = next + delta;
+		}
+        string buffer = text.substr(previous);
+        pair.second = buffer;
+
+		wordsFromFile.push_back(pair);
+
+
+		/*cout << text << endl;
+		char* buffer = new char[text.length() + 1];
+        char const* delim = " \n";
+		memcpy(buffer, text.c_str(), (text.size() + 1) * sizeof(*buffer));
+        //strcpy(buffer, text.c_str());
+		char const* token = strtok(buffer, delim);
+        while (token != NULL) {
+			pair.first = token;
+            token = strtok(NULL, delim);
+            pair.second = token;
+		}
+		delete[] buffer;
+        delete[] token;
+        wordsFromFile.push_back(pair);*/
+	}
+}
 
 int main()
 {
     setlocale(LC_ALL, "rus");
 
-    int choose;
-    bool menuState = true;
+    ifstream Airport(PATH);
+    if (!Airport.is_open())
+        cout << "Ð±Ð°Ð½\n";
 
-    cout << "===================================================\n";
-    cout << "| Äîáðî ïîæàëîâàòü â ïðîãðàììó                    |\n";
-    cout << "| ïðîâåðêè çíàíèÿ ñëîâ àíãëèéñêîãî ÿçûêà          |\n";
-    
-	while (menuState) {
-        cout << "===================================================\n";
-        cout << "| 1. Ïðàâèëà                                      |\n"
-             << "| 2. Âûáîð òåìû                                   |\n"
-             << "| 3. Àâòîðû                                       |\n"
-             << "| 4. Âûõîä                                        |\n";
-        cout << "===================================================\n";
-        cout << "Âûáåðèòå ïóíêò ìåíþ: ";
-        cin >> choose;
+    //menu();
 
-        switch (choose) {
-        case 1:
-            cout << "\n  ×òîáû íà÷àòü ïðîâåðêó çíàíèíÿ àíãëèéñêèõ ñëîâ,\n"
-                 << "  âûáåðèòå ïóíêò ìåíþ \"Âûáîð òåìû\" \n"
-                 << "  È âûáåðèòå òåìó, ïî êîòîðîé õîòèòå ïðîéòè ïðîâåðêó.\n"
-                 << "  Ïîñëå ýòîãî, íà ýêðàí âûâåäèòñÿ ñëîâî, êîòîðîå íóæíî "
-                    "ïåðåâåñòè\n"
-                 << "  Åñëè âàø ïåðåâîä áóäåò âåðíûì - âûâåäåòñÿ ñëåäóþùåå "
-                    "ñëîâî.\n"
-                 << "  Åñëè æå ïåðåâîä áóäåò íåâåðíûì - âûâåäåòñÿ ïðàâèëüíûé "
-                    "ïåðåâîä.\n\n";
-            break;
-        case 2:
-            break;
-        case 3:
-            cout << "\n  Êóðñîâîé ïðîåêò ïî äèñöèïëèíå\n"
-				 << "  \"Òåõíîëîãèè ðàçðàáîòêè ïðîãðàììíîãî îáåñïå÷åíèÿ\".\n"
-                 << "  Âûïîëíåí ñòóäåíòîì ãðóïïû ÈÏ-912 Øêóðàòîâûì Àëåêñååì.\n\n";
-            break;
-        case 4:
-            cout << "\n  Âûõîä\n\n";
-            menuState = false;
-            break;
-        default:
-            cout << "\n  Îøèáêà ââîäà!\n\n";
-            break;
-        }
+	vector<pair<string, string>> wordsFromFile;
+    fileParse(PATH, wordsFromFile);
+
+	for (int i = 0; i < wordsFromFile.size(); i++) {
+        cout << wordsFromFile[i].first << " - " 
+			 << wordsFromFile[i].second
+             << "\n";
 	}
 
     cin.get();
