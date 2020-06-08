@@ -1,59 +1,67 @@
 #include <fstream>
 #include <iostream>
+#include <string>
 #include <utility>
 #include <vector>
-#include <string>
 using namespace std;
 
 #pragma warning(disable : 4996)
 #define PATH "D:\\code\\TRPO\\Course\\Topics\\Airport.txt"
 
-void menu()
+bool answerCheck(
+        const string answer,
+        vector<pair<string, string>>& wordsFromFile,
+        const int index);
+void translate(vector<pair<string, string>>& wordsFromFile);
+void fileParse(const string path, vector<pair<string, string>>& wordsFromFile);
+void menu();
+void secondMenu();
+
+int main()
 {
-    int choose;
-    bool menuState = true;
+    setlocale(LC_ALL, "rus");
 
-    cout << "===================================================\n";
-    cout << "| Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ РїСЂРѕРіСЂР°РјРјСѓ                    |\n";
-    cout << "| РїСЂРѕРІРµСЂРєРё Р·РЅР°РЅРёСЏ СЃР»РѕРІ Р°РЅРіР»РёР№СЃРєРѕРіРѕ СЏР·С‹РєР°          |\n";
+    menu();
 
-    while (menuState) {
-        cout << "===================================================\n";
-        cout << "| 1. РџСЂР°РІРёР»Р°                                      |\n"
-             << "| 2. Р’С‹Р±РѕСЂ С‚РµРјС‹                                   |\n"
-             << "| 3. РђРІС‚РѕСЂС‹                                       |\n"
-             << "| 4. Р’С‹С…РѕРґ                                        |\n";
-        cout << "===================================================\n";
-        cout << "Р’С‹Р±РµСЂРёС‚Рµ РїСѓРЅРєС‚ РјРµРЅСЋ: ";
-        cin >> choose;
+	secondMenu();
 
-        switch (choose) {
-        case 1:
-            cout << "\n  Р§С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ РїСЂРѕРІРµСЂРєСѓ Р·РЅР°РЅРёРЅСЏ Р°РЅРіР»РёР№СЃРєРёС… СЃР»РѕРІ,\n"
-                 << "  РІС‹Р±РµСЂРёС‚Рµ РїСѓРЅРєС‚ РјРµРЅСЋ \"Р’С‹Р±РѕСЂ С‚РµРјС‹\" \n"
-                 << "  Р РІС‹Р±РµСЂРёС‚Рµ С‚РµРјСѓ, РїРѕ РєРѕС‚РѕСЂРѕР№ С…РѕС‚РёС‚Рµ РїСЂРѕР№С‚Рё РїСЂРѕРІРµСЂРєСѓ.\n"
-                 << "  РџРѕСЃР»Рµ СЌС‚РѕРіРѕ, РЅР° СЌРєСЂР°РЅ РІС‹РІРµРґРёС‚СЃСЏ СЃР»РѕРІРѕ, РєРѕС‚РѕСЂРѕРµ РЅСѓР¶РЅРѕ "
-                    "РїРµСЂРµРІРµСЃС‚Рё\n"
-                 << "  Р•СЃР»Рё РІР°С€ РїРµСЂРµРІРѕРґ Р±СѓРґРµС‚ РІРµСЂРЅС‹Рј - РІС‹РІРµРґРµС‚СЃСЏ СЃР»РµРґСѓСЋС‰РµРµ "
-                    "СЃР»РѕРІРѕ.\n"
-                 << "  Р•СЃР»Рё Р¶Рµ РїРµСЂРµРІРѕРґ Р±СѓРґРµС‚ РЅРµРІРµСЂРЅС‹Рј - РІС‹РІРµРґРµС‚СЃСЏ РїСЂР°РІРёР»СЊРЅС‹Р№ "
-                    "РїРµСЂРµРІРѕРґ.\n\n";
-            break;
-        case 2:
-            break;
-        case 3:
-            cout << "\n  РљСѓСЂСЃРѕРІРѕР№ РїСЂРѕРµРєС‚ РїРѕ РґРёСЃС†РёРїР»РёРЅРµ\n"
-                 << "  \"РўРµС…РЅРѕР»РѕРіРёРё СЂР°Р·СЂР°Р±РѕС‚РєРё РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ\".\n"
-                 << "  Р’С‹РїРѕР»РЅРµРЅ СЃС‚СѓРґРµРЅС‚РѕРј РіСЂСѓРїРїС‹ РРџ-912 РЁРєСѓСЂР°С‚РѕРІС‹Рј "
-                    "РђР»РµРєСЃРµРµРј.\n\n";
-            break;
-        case 4:
-            cout << "\n  Р’С‹С…РѕРґ\n\n";
-            menuState = false;
-            break;
-        default:
-            cout << "\n  РћС€РёР±РєР° РІРІРѕРґР°!\n\n";
-            break;
+    cin.get();
+    cin.get();
+    return 0;
+}
+
+bool answerCheck(
+        const string answer,
+        vector<pair<string, string>>& wordsFromFile,
+        const int index)
+{
+    if (answer == wordsFromFile[index].first) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void translate(vector<pair<string, string>>& wordsFromFile)
+{
+    int testSize = wordsFromFile.size();
+    bool isCorrect;
+
+    for (int i = 0; i < testSize; i++) {
+        string answer;
+
+        cout << "  Переведите данное слово на английский язык:\n  "
+             << wordsFromFile[i].second << "\n\n";
+
+        cout << "  Введите перевод: ";
+        cin >> answer;
+
+        isCorrect = answerCheck(answer, wordsFromFile, i);
+        if (isCorrect) {
+            cout << "\n  Все верно!\n\n";
+        } else {
+            cout << "\n  Нет, это слово переводится так:\n  "
+                 << wordsFromFile[i].first << "\n\n";
         }
     }
 }
@@ -62,67 +70,161 @@ void fileParse(const string path, vector<pair<string, string>>& wordsFromFile)
 {
     vector<string> wordsFromLine;
 
-	ifstream file(path);
+    ifstream file(path);
 
-	while (!file.eof()) {
+    while (!file.eof()) {
         pair<string, string> pair;
         string text;
         string delim = " ";
 
         getline(file, text);
 
-		size_t previous = 0;
+        size_t previous = 0;
         size_t next;
         size_t delta = delim.length();
 
-		while ((next = text.find(delim, previous)) != string::npos) {
+        while ((next = text.find(delim, previous)) != string::npos) {
             string buffer = text.substr(previous, next - previous);
-			pair.first = buffer;
-			previous = next + delta;
-		}
+            pair.first = buffer;
+            previous = next + delta;
+        }
         string buffer = text.substr(previous);
         pair.second = buffer;
 
-		wordsFromFile.push_back(pair);
-
-
-		/*cout << text << endl;
-		char* buffer = new char[text.length() + 1];
-        char const* delim = " \n";
-		memcpy(buffer, text.c_str(), (text.size() + 1) * sizeof(*buffer));
-        //strcpy(buffer, text.c_str());
-		char const* token = strtok(buffer, delim);
-        while (token != NULL) {
-			pair.first = token;
-            token = strtok(NULL, delim);
-            pair.second = token;
-		}
-		delete[] buffer;
-        delete[] token;
-        wordsFromFile.push_back(pair);*/
-	}
+        wordsFromFile.push_back(pair);
+    }
 }
 
-int main()
+void menu()
 {
-    setlocale(LC_ALL, "rus");
+    int choose;
+    bool menuState = true;
 
-    ifstream Airport(PATH);
-    if (!Airport.is_open())
-        cout << "Р±Р°РЅ\n";
+    cout << "===================================================\n";
+    cout << "|          Добро пожаловать в программу           |\n";
+    cout << "|      проверки знания слов английского языка     |\n";
 
-    //menu();
+    while (menuState) {
+        cout << "===================================================\n";
+        cout << "| 1. Правила                                      |\n"
+             << "| 2. Выбор темы                                   |\n"
+             << "| 3. Авторы                                       |\n"
+             << "| 4. Выход                                        |\n";
+        cout << "===================================================\n";
+        cout << "Выберите пункт меню: ";
+        cin >> choose;
 
-	vector<pair<string, string>> wordsFromFile;
-    fileParse(PATH, wordsFromFile);
+        switch (choose) {
+        case 1:
+            cout << "\n  Чтобы начать проверку знаниня английских слов,\n"
+                 << "  выберите пункт меню \"Выбор темы\" \n"
+                 << "  И выберите тему, по которой хотите пройти проверку.\n"
+                 << "  После этого, на экран выведится слово, которое нужно "
+                    "перевести\n"
+                 << "  Если ваш перевод будет верным - выведется следующее "
+                    "слово.\n"
+                 << "  Если же перевод будет неверным - выведется правильный "
+                    "перевод.\n\n";
+            break;
+        case 2:
+            break;
+        case 3:
+            cout << "\n  Курсовой проект по дисциплине\n"
+                 << "  \"Технологии разработки программного обеспечения\".\n"
+                 << "  Выполнен студентом группы ИП-912 Шкуратовым "
+                    "Алексеем.\n\n";
+            break;
+        case 4:
+            cout << "\n  Выход\n\n";
+            menuState = false;
+            break;
+        default:
+            cout << "\n  Ошибка ввода!\n\n";
+            break;
+        }
+    }
+}
 
-	for (int i = 0; i < wordsFromFile.size(); i++) {
-        cout << wordsFromFile[i].first << " - " 
-			 << wordsFromFile[i].second
-             << "\n";
-	}
+void secondMenu()
+{
+    vector<pair<string, string>> wordsFromFile;
+    int choose;
 
-    cin.get();
-    cin.get();
-    return 0;
+    cout << "===================================================\n";
+    cout << "|          Выберите тему для проверки             |\n";
+    cout << "|            из ниже представленных               |\n";
+    cout << "===================================================\n";
+    cout << "| 1. Аэропорт                                     |\n";
+    cout << "| 2. Машины                                       |\n";
+    cout << "| 3. Кино                                         |\n";
+    cout << "| 4. Город                                        |\n";
+    cout << "| 5. Болезни                                      |\n";
+    cout << "| 6. Образование                                  |\n";
+    cout << "| 7. Музыка                                       |\n";
+    cout << "| 8. Политика                                     |\n";
+    cout << "| 9. Общество                                     |\n";
+    cout << "| 10. Химия и физика                              |\n";
+    cout << "| 11. Вернуться назад                             |\n";
+    cout << "===================================================\n";
+    cout << "Выберите пункт меню: ";
+    cin >> choose;
+
+    switch (choose) {
+    case 1:
+        cout << "\n  Вы выбрали тему \"Аэропорт\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 2:
+        cout << "\n  Вы выбрали тему \"Машины\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 3:
+        cout << "\n  Вы выбрали тему \"Кино\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 4:
+        cout << "\n  Вы выбрали тему \"Город\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 5:
+        cout << "\n  Вы выбрали тему \"Болезни\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 6:
+        cout << "\n  Вы выбрали тему \"Образование\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 7:
+        cout << "\n  Вы выбрали тему \"Музыка\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 8:
+        cout << "\n  Вы выбрали тему \"Политика\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 9:
+        cout << "\n  Вы выбрали тему \"Общество\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 10:
+        cout << "\n  Вы выбрали тему \"Химия и физика\"!\n";
+        fileParse(PATH, wordsFromFile);
+        translate(wordsFromFile);
+        break;
+    case 11:
+        menu();
+        break;
+    default:
+        cout << "\n  Ошибка ввода!\n\n";
+        break;
+    }
 }
