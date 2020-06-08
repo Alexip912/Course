@@ -16,8 +16,16 @@ OBJ_TEST = g++ $(GFLAGS) $(LDFLAGS) -I src -c $^ -o $@
 
 .PHONY: clean all
 
-all: $(DIR_SRC)/main.o $(DIR_SRC)/menu.o $(DIR_SRC)/wordsTranslate.o
+all: $(EXE) $(TEST)
+
+$(EXE): $(DIR_SRC)/main.o $(DIR_SRC)/menu.o $(DIR_SRC)/wordsTranslate.o
 	g++ $(FLAGS) $^ -o $@
+	
+$(TEST): $(DIR_TEST)/test.o $(DIR_SRC)/menu.o $(DIR_SRC)/wordsTranslate.o
+	$(TEST_FLAGS) $^ -o $@
+	
+$(DIR_TEST)/test.o: test/test.cpp
+	$(OBJ_TEST)
 	
 $(DIR_SRC)/main.o: src/main.cpp
 	$(OBJ)

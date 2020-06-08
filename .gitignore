@@ -3,3 +3,5 @@ bin/main
 *.o
 *.d
 -miltiInst
+course
+test~

@@ -10,16 +10,16 @@
 #include <utility>
 #include <vector>
 
-#define AIRPORT "D:/code/TRPO/Course/Topics/Airport.txt"
-#define CAR "D:/code/TRPO/Course/Topics/Car.txt"
-#define CINEMA "D:/code/TRPO/Course/Topics/Cinema.txt"
-#define CITY "D:/code/TRPO/Course/Topics/City.txt"
-#define DISEASES "D:/code/TRPO/Course/Topics/Diseases.txt"
-#define EDUCATION "D:/code/TRPO/Course/Topics/Education.txt"
-#define MUSIC "D:/code/TRPO/Course/Topics/Music.txt"
-#define POLITICS "D:/code/TRPO/Course/Topics/Politics.txt"
-#define SOCIETY "D:/code/TRPO/Course/Topics/Society.txt"
-#define CHEMISTRY_PHYSICS "D:/code/TRPO/Course/Topics/Ñhemistry_physics.txt"
+#define AIRPORT "Topics/Airport.txt"
+#define CAR "Topics/Car.txt"
+#define CINEMA "Topics/Cinema.txt"
+#define CITY "Topics/City.txt"
+#define DISEASES "Topics/Diseases.txt"
+#define EDUCATION "Topics/Education.txt"
+#define MUSIC "Topics/Music.txt"
+#define POLITICS "Topics/Politics.txt"
+#define SOCIETY "Topics/Society.txt"
+#define CHEMISTRY_PHYSICS "Topics/Ð¡hemistry_physics.txt"
 
 bool answerCheck(
         const std::string answer,
