@@ -26,6 +26,7 @@ bool answerCheck(
         std::vector<std::pair<std::string, std::string>>& wordsFromFile,
         const int index);
 void translate(std::vector<std::pair<std::string, std::string>>& wordsFromFile);
+bool checkPath(const std::string path);
 void fileParse(
         const std::string path,
         std::vector<std::pair<std::string, std::string>>& wordsFromFile);

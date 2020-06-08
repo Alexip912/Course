@@ -36,6 +36,12 @@ void translate(std::vector<std::pair<std::string, std::string>>& wordsFromFile)
     }
 }
 
+bool checkPath(const std::string path)
+{
+    std::ifstream test(path);
+    return test.is_open();
+}
+
 void fileParse(
         const std::string path,
         std::vector<std::pair<std::string, std::string>>& wordsFromFile)
@@ -91,54 +97,94 @@ void secondMenu()
 
     switch (choose) {
     case 1:
-        std::cout << "\n  Вы выбрали тему \"Аэропорт\"!\n";
-        fileParse(AIRPORT, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(AIRPORT)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Аэропорт\"!\n\n";
+            fileParse(AIRPORT, wordsFromFile);
+            translate(wordsFromFile);
+		}
         break;
     case 2:
-        std::cout << "\n  Вы выбрали тему \"Машины\"!\n";
-        fileParse(CAR, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(CAR)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Машины\"!\n\n";
+            fileParse(CAR, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 3:
-        std::cout << "\n  Вы выбрали тему \"Кино\"!\n";
-        fileParse(CINEMA, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(CINEMA)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Кино\"!\n\n";
+            fileParse(CINEMA, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 4:
-        std::cout << "\n  Вы выбрали тему \"Город\"!\n";
-        fileParse(CITY, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(CITY)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Город\"!\n\n";
+            fileParse(CITY, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 5:
-        std::cout << "\n  Вы выбрали тему \"Болезни\"!\n";
-        fileParse(DISEASES, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(DISEASES)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Болезни\"!\n\n";
+            fileParse(DISEASES, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 6:
-        std::cout << "\n  Вы выбрали тему \"Образование\"!\n";
-        fileParse(EDUCATION, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(EDUCATION)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Образование\"!\n\n";
+            fileParse(EDUCATION, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 7:
-        std::cout << "\n  Вы выбрали тему \"Музыка\"!\n";
-        fileParse(MUSIC, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(MUSIC)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Музыка\"!\n\n";
+            fileParse(MUSIC, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 8:
-        std::cout << "\n  Вы выбрали тему \"Политика\"!\n";
-        fileParse(POLITICS, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(POLITICS)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Политика\"!\n\n";
+            fileParse(POLITICS, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 9:
-        std::cout << "\n  Вы выбрали тему \"Общество\"!\n";
-        fileParse(SOCIETY, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(SOCIETY)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Общество\"!\n\n";
+            fileParse(SOCIETY, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 10:
-        std::cout << "\n  Вы выбрали тему \"Химия и физика\"!\n";
-        fileParse(CHEMISTRY_PHYSICS, wordsFromFile);
-        translate(wordsFromFile);
+        if (!checkPath(CHEMISTRY_PHYSICS)) {
+            std::cout << "  Отсутствует файл со словами!\n";
+        } else {
+            std::cout << "\n  Вы выбрали тему \"Химия и физика\"!\n\n";
+            fileParse(CHEMISTRY_PHYSICS, wordsFromFile);
+            translate(wordsFromFile);
+        }
         break;
     case 11:
         menu();
@@ -147,4 +193,6 @@ void secondMenu()
         std::cout << "\n  Ошибка ввода!\n\n";
         break;
     }
+
+	std::cout << "  Вы перевели все слова по данной теме!\n\n";
 }
