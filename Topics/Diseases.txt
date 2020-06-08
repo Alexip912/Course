@@ -1,19 +1,19 @@
-Abscess нарыв
+Abscess Нарыв
 AIDS СПИД
 Allergy	Аллергия
 Stroke Инсульт
-fracture	Перелом
+Fracture Перелом
 Bronchitis Бронхит
 Burn Ожог
 Cancer Рак
-Chickenpox Ветряная оспа
+Chickenpox Ветряная Оспа
 Cold Простуда
 Diabetes Диабет
 Dysentery Дизентерия
 Epilepsy Эпилепсия
 Gastritis Гастрит
 Hypertension Гипертония
-Inflammation	Воспаление
+Inflammation Воспаление
 Influenza Грипп
 Measles Корь
 Nephritis Нефрит
@@ -25,4 +25,4 @@ Tonsillitis Тонзиллит
 Tuberculosis Туберкулёз
 Tumour Опухоль
 Ulcer Язва
-Quinsy ангина
+Quinsy Ангина
