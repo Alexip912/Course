@@ -1,0 +1,3 @@
+Airoport аэропорт
+Airplane самолет
+Aisle проход
