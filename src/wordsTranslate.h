@@ -1,7 +1,7 @@
 #ifndef TRANSLATE_H
 #define TRANSLATE_H
 
-#pragma warning(disable : 4996)
+#define _CRT_SECURE_NO_WARNINGS
 
 #include "menu.h"
 #include <fstream>

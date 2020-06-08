@@ -103,7 +103,7 @@ void secondMenu()
             std::cout << "\n  Вы выбрали тему \"Аэропорт\"!\n\n";
             fileParse(AIRPORT, wordsFromFile);
             translate(wordsFromFile);
-		}
+        }
         break;
     case 2:
         if (!checkPath(CAR)) {
@@ -194,5 +194,5 @@ void secondMenu()
         break;
     }
 
-	std::cout << "  Вы перевели все слова по данной теме!\n\n";
+    std::cout << "  Вы перевели все слова по данной теме!\n\n";
 }
