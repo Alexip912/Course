@@ -8,7 +8,7 @@
 
 #define RIGHT_PATH "Topics/Test.txt"
 #define WRONG_PATH "Topics/test.jpg"
-#define TEST_PATH "Topics/test.txt"
+#define TEST_PATH "Topics/Test.txt"
 
 void fillVector(
         std::vector<std::pair<std::string, std::string>>& vector,
